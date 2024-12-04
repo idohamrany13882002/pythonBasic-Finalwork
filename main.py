@@ -235,7 +235,7 @@ def exc_8():
     exc_6({'name': 'John', 'age': 20, 'hobbies': ['reading', 'games', 'coding']}, "Marin")
 
 
-def exc_9():
+def exc_9(combined_list:list[list]):
     """
     Write a function that prints all the elements of a 2D array using nested for
     loops.
@@ -243,7 +243,10 @@ def exc_9():
     print_matrix(matrix) → Should print: 1 2 3 4 5 6
     :return:
     """
-    print("exc.9:", end=" ")
+    print("---exc.9---")
+    for list_ in combined_list:
+        for num_ in list_:
+            print(num_, end = " ")
 
 
 def exc_10():
@@ -418,7 +421,7 @@ exc_6([{"id": 1, "id": 1, "first name": "Ido", "last name": "Hamrani", "age": 22
        {"id": 3, "first name": "Liz", "last name": "Walsh", "age": 31, "age": 31, "country": "UK", "city": "London"}])
 exc_7()
 exc_8()
-# exc_9()
+exc_9([[1,2],[3,4],[5,6]])
 # exc_10()
 # exc_11()
 # exc_12()
