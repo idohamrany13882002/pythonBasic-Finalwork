@@ -418,7 +418,7 @@ exc_6([{"id": 1, "id": 1, "first name": "Ido", "last name": "Hamrani", "age": 22
        {"id": 3, "first name": "Liz", "last name": "Walsh", "age": 31, "age": 31, "country": "UK", "city": "London"}])
 exc_7()
 exc_8()
-exc_9()
+# exc_9()
 # exc_10()
 # exc_11()
 # exc_12()
