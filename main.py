@@ -268,7 +268,7 @@ def exc_10(matrix: list[list]):
     print(counter)
 
 
-def exc_11():
+def exc_11(arr: list[int]):
     """
     Write a function to return an array of all the elements that are repeated more
     than once in a given array.
@@ -276,24 +276,34 @@ def exc_11():
     print(find_dup(arr)) Should print: [4, 1]
     :return:
     """
-    print("exc.11:", end=" ")
+    print("---exc.11---")
+    res: list[int] = []
+    for i in arr:
+        if arr.count(i) > 1:
+            if i not in res:
+                res.append(i)
+    print(res)
 
 
-def exc_12():
+def exc_12(arr: list[object]):
     """
     Write a function using a for loop that gets an array and returns a new array
     with the elements from the given array appearing in reverse order. (Don’t use
     array reverse() method)
     For example:
-    arr = [43, "what", 9, true, "cannot", false, "be", 3, true];
+    arr = [43, "what", 9, True, "cannot", False, "be", 3, True];
     Function output should be:
     [ture, 3, “be”, false, “cannot”, true, 9, “what”, 43]
     :return:
     """
-    print("exc.12:", end=" ")
+    print("---exc.12---")
+    rev_arr: list[object] = []
+    for i in arr[::-1]:
+        rev_arr.append(i)
+    print(rev_arr)
 
 
-def exc_13():
+def exc_13(arr1:list[int],arr2:list[int]):
     """
     Given two arrays of integers. Add up each element in the same position and
     create a new array containing the sum of each pair.
@@ -305,10 +315,18 @@ def exc_13():
     [12, 7, 16]
     :return:
     """
-    print("exc.13:", end=" ")
+    print("---exc.13---")
+    arr3:list[int] = []
+    if len(arr1)>len(arr2):
+        for i in range(0,len(arr1)):
+            arr3.append(arr1[i]+arr2[i])
+    else:
+        for i in range(0,len(arr2)):
+            arr3.append(arr1[i]+arr2[i])
+    print(arr3)
 
 
-def exc_14():
+def exc_14(str1:str,str2:str):
     """
     Write a program that will check if two strings are palindromes.
     A palindrome is a word that spells the same forward and backward.
@@ -323,7 +341,9 @@ def exc_14():
     False (for second_str)
     :return:
     """
-    print("exc.14:", end=" ")
+    print("---exc.14---")
+    print(f"{str1}:","True" if str1==str1[::-1] else "False")
+    print(f"{str2}:","True" if str2==str2[::-1] else "False")
 
 
 def exc_15():
@@ -431,10 +451,10 @@ exc_7()
 exc_8()
 exc_9([[1, 2], [3, 4], [5, 6]])
 exc_10([[0, 1, 1], [0, 1, 0], [1, 0, 0]])
-# exc_11()
-# exc_12()
-# exc_13()
-# exc_14()
+exc_11([4, 2, 34, 4, 1, 12, 1, 4])
+exc_12([43, "what", 9, True, "cannot", False, "be", 3, True])
+exc_13([4, 6, 7],[8, 1, 9])
+exc_14("racecar","Java")
 # exc_15()
 # exc_16()
 # exc_17()
