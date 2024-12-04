@@ -303,7 +303,7 @@ def exc_12(arr: list[object]):
     print(rev_arr)
 
 
-def exc_13(arr1:list[int],arr2:list[int]):
+def exc_13(arr1: list[int], arr2: list[int]):
     """
     Given two arrays of integers. Add up each element in the same position and
     create a new array containing the sum of each pair.
@@ -316,17 +316,17 @@ def exc_13(arr1:list[int],arr2:list[int]):
     :return:
     """
     print("---exc.13---")
-    arr3:list[int] = []
-    if len(arr1)>len(arr2):
-        for i in range(0,len(arr1)):
-            arr3.append(arr1[i]+arr2[i])
+    arr3: list[int] = []
+    if len(arr1) > len(arr2):
+        for i in range(0, len(arr1)):
+            arr3.append(arr1[i] + arr2[i])
     else:
-        for i in range(0,len(arr2)):
-            arr3.append(arr1[i]+arr2[i])
+        for i in range(0, len(arr2)):
+            arr3.append(arr1[i] + arr2[i])
     print(arr3)
 
 
-def exc_14(str1:str,str2:str):
+def exc_14(str1: str, str2: str):
     """
     Write a program that will check if two strings are palindromes.
     A palindrome is a word that spells the same forward and backward.
@@ -342,8 +342,8 @@ def exc_14(str1:str,str2:str):
     :return:
     """
     print("---exc.14---")
-    print(f"{str1}:","True" if str1==str1[::-1] else "False")
-    print(f"{str2}:","True" if str2==str2[::-1] else "False")
+    print(f"{str1}:", "True" if str1 == str1[::-1] else "False")
+    print(f"{str2}:", "True" if str2 == str2[::-1] else "False")
 
 
 def exc_15():
@@ -352,7 +352,12 @@ def exc_15():
     every iteration the counter is multiplied by 2 starting from 1.
     :return:
     """
-    print("exc.15:", end=" ")
+    print("---exc.15---")
+    counter: int = 1
+    while counter < 100:
+        print(counter, end=", ")
+        counter *= 2
+    print()
 
 
 def exc_16():
@@ -362,34 +367,58 @@ def exc_16():
     The counter should start with the value 900000 before the first iteration.
     :return:
     """
-    print("exc.16:", end=" ")
+    print("---exc.16---")
+    counter: int = 900000
+    while counter > 50:
+        print(counter, end=",")
+        counter /= 2
+    print()
 
 
-def exc_17():
+def exc_17(arr: list[str]):
     """
     Write a function that gets an array of strings as parameter and returns a new
     array containing all the values that appear more than once. In your solution
     use only while loops.
     :return:
     """
-    print("exc.17:", end=" ")
+    print("---exc.17---")
+    res: list[str] = []
+    none_dupe: list[str] = []
+    counter: int = 0
+
+    while counter < len(arr):
+        if arr[counter] not in none_dupe:
+            none_dupe.append(arr[counter])
+        else:
+            res.append(arr[counter])
+        counter += 1
+    print(res)
 
 
-def exc_18():
+def exc_18(arr: list[str]):
     """
     Write a function that gets an array of strings as parameter and returns a new
     array containing all the values from the provided array in the same order but
     without any duplicated values. In your solution use only while loops.
     For example:
-    names = ['Chris', 'Kevin', 'Naveed', 'Pete', 'Victor', ‘Chris’, ‘Kevin’]
+    names = ['Chris', 'Kevin', 'Naveed', 'Pete', 'Victor', 'Chris', 'Kevin']
     Function output should be:
     ['Chris', 'Kevin', 'Naveed', 'Pete', 'Victor']
     :return:
     """
-    print("exc.18:", end=" ")
+    print("---exc.18---")
+    res: list[str] = []
+    counter: int = 0
+
+    while counter < len(arr):
+        if arr[counter] not in res:
+            res.append(arr[counter])
+        counter += 1
+    print(res)
 
 
-def exc_19():
+def exc_19(arr:list[str]):
     """
     Write a function that gets an array of strings as parameter and returns a new
     array containing all the values from the provided array in the same order but
@@ -402,10 +431,19 @@ def exc_19():
     ['Chris', 'Kevin', 'Naveed', 'Victor']
     :return:
     """
-    print("exc.19:", end=" ")
+    print("---exc.19---")
+    res: list[str] = []
+    counter: int = 0
+
+    while counter < len(arr):
+        if arr[counter] not in res:
+            if arr[counter] != "Pete":
+                res.append(arr[counter])
+        counter += 1
+    print(res)
 
 
-def exc_20():
+def exc_20(arr:list[bool]):
     """
     Use a while loop to iterate on a boolean array.
     As long as the next index is different from the previous index the iteration
@@ -417,7 +455,19 @@ def exc_20():
     array= [true, false, true, false, true, false]; → returns -1
     :return:
     """
-    print("exc.20:", end=" ")
+    print("---exc.20---")
+
+    res:int = 0
+    counter:int = 0
+    while counter< len(arr):
+        if arr[counter]==arr[counter-1]:
+            if res ==0:
+                res += counter
+        counter+=1
+    if res ==0:
+        print(-1)
+    else:
+        print(res)
 
 
 def exc_21():
@@ -434,7 +484,28 @@ def exc_21():
     Validation for email input → string type with ‘@’ inside.
     :return:
     """
-    print("exc.21:", end=" ")
+    print("---exc.21---")
+    while True:
+        full_name: str = input("Enter your full name: ")
+        while " " not in full_name:
+            print("try again")
+            full_name: str = input("Enter your full name: ")
+
+        age: int = int(input("Enter your age: "))
+        while not 1 < age < 130:
+            print("try again")
+            age: int = int(input("Enter your age: "))
+
+        email: str = input("Enter your email: ")
+        while "@" not in email:
+            print("try again")
+            email: str = input("Enter your email: ")
+
+        break
+    print("all answer were valid")
+    print(full_name)
+    print(age)
+    print(email)
 
 
 exc_1()
@@ -453,12 +524,14 @@ exc_9([[1, 2], [3, 4], [5, 6]])
 exc_10([[0, 1, 1], [0, 1, 0], [1, 0, 0]])
 exc_11([4, 2, 34, 4, 1, 12, 1, 4])
 exc_12([43, "what", 9, True, "cannot", False, "be", 3, True])
-exc_13([4, 6, 7],[8, 1, 9])
-exc_14("racecar","Java")
-# exc_15()
-# exc_16()
-# exc_17()
-# exc_18()
-# exc_19()
-# exc_20()
-# exc_21()
+exc_13([4, 6, 7], [8, 1, 9])
+exc_14("racecar", "Java")
+exc_15()
+exc_16()
+exc_17(['Chris', 'Kevin', 'Naveed', 'Pete', 'Victor', 'Chris', 'Kevin'])
+exc_18(['Chris', 'Kevin', 'Naveed', 'Pete', 'Victor', 'Chris', 'Kevin'])
+exc_19(['Chris', 'Kevin', 'Naveed', 'Pete', 'Victor', 'Chris', 'Kevin'])
+exc_20([True, False, False, True, True, False])
+exc_20([True, False, True, False, True, True])
+exc_20([True, False, True, False, True, False])
+exc_21()
