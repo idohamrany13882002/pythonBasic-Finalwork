@@ -118,6 +118,7 @@ def exc_7():
     :return:
     """
     print("---exc.7---")
+
     def exc_1(our_pets: list[object]):
         """
         our_pets = [{"animal_type": "cat","names": ["Meowzer","Fluffy","Kit-Cat"]},{"animal_type": "dog","names": ["Spot","Bowser","Frankie"]}]
@@ -159,11 +160,11 @@ def exc_7():
         print(our_pets)
 
     exc_1([{"animal_type": "cat", "names": ["Meowzer", "Fluffy", "Kit-Cat"]},
-             {"animal_type": "dog", "names": ["Spot", "Bowser", "Frankie"]}])
+           {"animal_type": "dog", "names": ["Spot", "Bowser", "Frankie"]}])
     exc_2([{"animal_type": "cat", "names": ["Meowzer", "Fluffy", "Kit-Cat"]},
-             {"animal_type": "dog", "names": ["Spot", "Bowser", "Frankie"]}], "dog")
+           {"animal_type": "dog", "names": ["Spot", "Bowser", "Frankie"]}], "dog")
     exc_3([{"animal_type": "cat", "names": ["Meowzer", "Fluffy", "Kit-Cat"]},
-             {"animal_type": "dog", "names": ["Spot", "Bowser", "Frankie"]}], "Mario")
+           {"animal_type": "dog", "names": ["Spot", "Bowser", "Frankie"]}], "Mario")
 
 
 def exc_8():
@@ -235,7 +236,7 @@ def exc_8():
     exc_6({'name': 'John', 'age': 20, 'hobbies': ['reading', 'games', 'coding']}, "Marin")
 
 
-def exc_9(combined_list:list[list]):
+def exc_9(matrix: list[list]):
     """
     Write a function that prints all the elements of a 2D array using nested for
     loops.
@@ -244,12 +245,13 @@ def exc_9(combined_list:list[list]):
     :return:
     """
     print("---exc.9---")
-    for list_ in combined_list:
+    for list_ in matrix:
         for num_ in list_:
-            print(num_, end = " ")
+            print(num_, end=" ")
+    print()
 
 
-def exc_10():
+def exc_10(matrix: list[list]):
     """
     Write a function to count how many numbers of zeros appear in a 2D matrix
     using nested for loops and increment operation.
@@ -257,7 +259,13 @@ def exc_10():
     print(zero_count(matrix)) → Should print: 5
     :return:
     """
-    print("exc.10:", end=" ")
+    print("---exc.10---")
+    counter: int = 0
+    for list_ in matrix:
+        for num_ in list_:
+            if num_ == 0:
+                counter += 1
+    print(counter)
 
 
 def exc_11():
@@ -421,8 +429,8 @@ exc_6([{"id": 1, "id": 1, "first name": "Ido", "last name": "Hamrani", "age": 22
        {"id": 3, "first name": "Liz", "last name": "Walsh", "age": 31, "age": 31, "country": "UK", "city": "London"}])
 exc_7()
 exc_8()
-exc_9([[1,2],[3,4],[5,6]])
-# exc_10()
+exc_9([[1, 2], [3, 4], [5, 6]])
+exc_10([[0, 1, 1], [0, 1, 0], [1, 0, 0]])
 # exc_11()
 # exc_12()
 # exc_13()
