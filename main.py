@@ -3,7 +3,7 @@ def exc_1():
     Write a for loop that prints the numbers from 12 to 24.
     :return:
     """
-    print("exc.1:", end=" ")
+    print("---exc.1---")
     for i in range(12, 25):
         print(i, end=" ")
     print()
@@ -14,7 +14,7 @@ def exc_2():
     Write a for loop that prints the ODD numbers from 7 to 31
     :return:
     """
-    print("exc.2:", end=" ")
+    print("---exc.2---")
     for i in range(7, 32, 2):
         print(i, end=" ")
     print()
@@ -25,7 +25,7 @@ def exc_3():
     Write a for loop that prints the EVEN numbers from 10 to -20.
     :return:
     """
-    print("exc.3:", end=" ")
+    print("---exc.3---")
     for i in range(10, -21, -2):
         print(i, end=" ")
     print()
@@ -40,7 +40,7 @@ def exc_4():
     ● For each number that multiples of 3 and 5 print “FizzBuzz”
     :return:
     """
-    print("exc.4:", end=" ")
+    print("---exc.4---")
     for i in range(1, 46):
         if i % 3 == 0 and i % 5 == 0:
             print("FizzBuzz", end=" ")
@@ -63,7 +63,7 @@ def exc_5(l1: list[int]):
     :param l1:
     :return:
     """
-    print("exc.5:", end=" ")
+    print("---exc.5---")
     res: int = 0
     for i in l1:
         res += i
@@ -91,7 +91,7 @@ def exc_6(students: list[dict[str, object]]):
     :param students:
     :return:
     """
-    print("exc.6:", end=" ")
+    print("---exc.6---")
 
     for student in students:
         for i in student.keys():
@@ -104,47 +104,66 @@ def exc_6(students: list[dict[str, object]]):
     print(sorted(students, key=lambda x: x['age'], reverse=True))
 
 
-def exc_7_1(our_pets: list[object]):
+def exc_7():
     """
     our_pets = [{"animal_type": "cat","names": ["Meowzer","Fluffy","Kit-Cat"]},{"animal_type": "dog","names": ["Spot","Bowser","Frankie"]}]
     1 - Write a function that receives the array shown above and prints only
     animalType: cat.
-    :return:
-    """
-    # print("exc.7:", end=" ")
-    for pet in our_pets:
-        if pet["animal_type"] == "cat":
-            print("exc 7.1:", f"animalType: {pet["animal_type"]}")
-
-
-def exc_7_2(our_pets: list[object], animal_type: str):
-    """
-    our_pets = [{"animal_type": "cat","names": ["Meowzer","Fluffy","Kit-Cat"]},{"animal_type": "dog","names": ["Spot","Bowser","Frankie"]}]
     2 - Write a function that receives the array shown above and the animal type.
     The function should print all names of that animal type if this type exists in the
     object.
-    :param our_pets:
-    :param animal_type:
-    :return:
-    """
-    for pet in our_pets:
-        if pet["animal_type"] == animal_type:
-            print("exc 7.2:", f"names of {animal_type}s: {pet["names"]}")
-
-
-def exc_7_3(our_pets: list[object], name: str):
-    """
-    our_pets = [{"animal_type": "cat","names": ["Meowzer","Fluffy","Kit-Cat"]},{"animal_type": "dog","names": ["Spot","Bowser","Frankie"]}]
     3 - Write a function that that receives the array shown above and animal name
     The function should add the specified animal name to each ‘names’ array in
     each animal_type if that name does not exist in the ‘names’ array.
-    :param our_pets:
     :return:
     """
-    for pet in our_pets:
-        if name not in pet["names"]:
-            pet["names"].append(name)
-    print("exc.7.3:", our_pets)
+    print("---exc.7---")
+    def exc_1(our_pets: list[object]):
+        """
+        our_pets = [{"animal_type": "cat","names": ["Meowzer","Fluffy","Kit-Cat"]},{"animal_type": "dog","names": ["Spot","Bowser","Frankie"]}]
+        1 - Write a function that receives the array shown above and prints only
+        animalType: cat.
+        :return:
+        """
+        # print("exc.7:", end=" ")
+        for pet in our_pets:
+            if pet["animal_type"] == "cat":
+                print(f"animalType: {pet["animal_type"]}")
+
+    def exc_2(our_pets: list[object], animal_type: str):
+        """
+        our_pets = [{"animal_type": "cat","names": ["Meowzer","Fluffy","Kit-Cat"]},{"animal_type": "dog","names": ["Spot","Bowser","Frankie"]}]
+        2 - Write a function that receives the array shown above and the animal type.
+        The function should print all names of that animal type if this type exists in the
+        object.
+        :param our_pets:
+        :param animal_type:
+        :return:
+        """
+        for pet in our_pets:
+            if pet["animal_type"] == animal_type:
+                print(f"names of {animal_type}s: {pet["names"]}")
+
+    def exc_3(our_pets: list[object], name: str):
+        """
+        our_pets = [{"animal_type": "cat","names": ["Meowzer","Fluffy","Kit-Cat"]},{"animal_type": "dog","names": ["Spot","Bowser","Frankie"]}]
+        3 - Write a function that that receives the array shown above and animal name
+        The function should add the specified animal name to each ‘names’ array in
+        each animal_type if that name does not exist in the ‘names’ array.
+        :param our_pets:
+        :return:
+        """
+        for pet in our_pets:
+            if name not in pet["names"]:
+                pet["names"].append(name)
+        print(our_pets)
+
+    exc_1([{"animal_type": "cat", "names": ["Meowzer", "Fluffy", "Kit-Cat"]},
+             {"animal_type": "dog", "names": ["Spot", "Bowser", "Frankie"]}])
+    exc_2([{"animal_type": "cat", "names": ["Meowzer", "Fluffy", "Kit-Cat"]},
+             {"animal_type": "dog", "names": ["Spot", "Bowser", "Frankie"]}], "dog")
+    exc_3([{"animal_type": "cat", "names": ["Meowzer", "Fluffy", "Kit-Cat"]},
+             {"animal_type": "dog", "names": ["Spot", "Bowser", "Frankie"]}], "Mario")
 
 
 def exc_8():
@@ -163,7 +182,57 @@ def exc_8():
     6 - Add to the object student new property: family_name and add a value.
     :return:
     """
-    print("exc.8:", end=" ")
+    print("---exc.8---")
+
+    def exc_1(student: dict[str, object]):
+        """
+        student = {'name': 'John','age': 20,'hobbies': ['reading', 'games', 'coding'],}
+        1 - Write a function that prints all the student data (each student property
+        should be printed in a new line).
+        :return:
+        """
+        for key, value in student.items():
+            print(f"{key}:{value}")
+
+    def exc_2_3(student: dict[str, object], hobby: str):
+        """
+        student = {'name': 'John','age': 20,'hobbies': ['reading', 'games', 'coding'],}
+        2 - Write a function that receives the student object and a hobby, the function
+        should add the hobby to the student's hobbies array if it’s not exist already.
+        3 - Use the function that you wrote in ex 1 to print the data of the student and
+        check that the new hobby has been added.
+        :return:
+        """
+        if hobby not in student["hobbies"]:
+            student["hobbies"].append(hobby)
+        exc_1(student)
+
+    def exc_4_5(student: dict[str, object], hobby: str):
+        """
+        student = {'name': 'John','age': 20,'hobbies': ['reading', 'games', 'coding'],}
+        4 - Write a function that receives an object of a student and hobby, the
+        function should delete the hobby from the student's hobbies.
+        5 - Use the function that you wrote in ex 1 to print the data student and check
+        that the hobby has been deleted from the object student.
+        6 - Add to the object student new property: family_name and add a value.
+        :return:
+        """
+        if hobby in student["hobbies"]:
+            student["hobbies"].remove(hobby)
+        exc_1(student)
+
+    def exc_6(student: dict[str, object], family_name: str):
+        """
+        student = {'name': 'John','age': 20,'hobbies': ['reading', 'games', 'coding'],}
+        6 - Add to the object student new property: family_name and add a value.
+        :return:
+        """
+        student["family name"] = family_name
+        print(student)
+
+    exc_2_3({'name': 'John', 'age': 20, 'hobbies': ['reading', 'games', 'coding']}, "movies")
+    exc_4_5({'name': 'John', 'age': 20, 'hobbies': ['reading', 'games', 'coding']}, "reading")
+    exc_6({'name': 'John', 'age': 20, 'hobbies': ['reading', 'games', 'coding']}, "Marin")
 
 
 def exc_9():
@@ -347,13 +416,8 @@ exc_6([{"id": 1, "id": 1, "first name": "Ido", "last name": "Hamrani", "age": 22
        {"id": 2, "first name": "Danny", "first name": "Danny", "last name": "Cohen", "age": 18, "country": "USA",
         "city": "New-York"},
        {"id": 3, "first name": "Liz", "last name": "Walsh", "age": 31, "age": 31, "country": "UK", "city": "London"}])
-exc_7_1([{"animal_type": "cat", "names": ["Meowzer", "Fluffy", "Kit-Cat"]},
-         {"animal_type": "dog", "names": ["Spot", "Bowser", "Frankie"]}])
-exc_7_2([{"animal_type": "cat", "names": ["Meowzer", "Fluffy", "Kit-Cat"]},
-         {"animal_type": "dog", "names": ["Spot", "Bowser", "Frankie"]}], "dog")
-exc_7_3([{"animal_type": "cat", "names": ["Meowzer", "Fluffy", "Kit-Cat"]},
-         {"animal_type": "dog", "names": ["Spot", "Bowser", "Frankie"]}], "Mario")
-# exc_8()
+exc_7()
+exc_8()
 # exc_9()
 # exc_10()
 # exc_11()
