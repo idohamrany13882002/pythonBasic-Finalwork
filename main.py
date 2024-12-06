@@ -70,7 +70,7 @@ def exc_5(l1: list[int]):
     print(res)
 
 
-def exc_6(students: list[dict[str, object]]):
+def exc_6(students: list[dict[str, object]], prop: str):
     """
     Write a function that receives an array of objects.
     Each object should represent a student with the properties:
@@ -94,12 +94,10 @@ def exc_6(students: list[dict[str, object]]):
     print("---exc.6---")
 
     for student in students:
-        for i in student.keys():
-            keys_to_keep: list[str] = []
-            if not i in keys_to_keep:
-                keys_to_keep.append(i)
-            else:
-                student.pop(i)
+        if prop in student:
+            del student[prop]
+        for key,value in student.items():
+            print(f"{key}: {value}")
 
     print(sorted(students, key=lambda x: x['age'], reverse=True))
 
@@ -517,7 +515,7 @@ exc_6([{"id": 1, "id": 1, "first name": "Ido", "last name": "Hamrani", "age": 22
         "city": "Rosh-ha'ayin"},
        {"id": 2, "first name": "Danny", "first name": "Danny", "last name": "Cohen", "age": 18, "country": "USA",
         "city": "New-York"},
-       {"id": 3, "first name": "Liz", "last name": "Walsh", "age": 31, "age": 31, "country": "UK", "city": "London"}])
+       {"id": 3, "first name": "Liz", "last name": "Walsh", "age": 31, "age": 31, "country": "UK", "city": "London"}],"city")
 exc_7()
 exc_8()
 exc_9([[1, 2], [3, 4], [5, 6]])
