@@ -95,10 +95,8 @@ def exc_6(students: list[dict[str, object]], prop: str):
     for student in sorted(students, key=lambda x: x['age'], reverse=True):
         if prop in student:
             del student[prop]
-        for key,value in student.items():
+        for key, value in student.items():
             print(f"{key}: {value}")
-
-
 
 
 def exc_7():
@@ -415,7 +413,7 @@ def exc_18(arr: list[str]):
     print(res)
 
 
-def exc_19(arr:list[str]):
+def exc_19(arr: list[str]):
     """
     Write a function that gets an array of strings as parameter and returns a new
     array containing all the values from the provided array in the same order but
@@ -440,7 +438,7 @@ def exc_19(arr:list[str]):
     print(res)
 
 
-def exc_20(arr:list[bool]):
+def exc_20(arr: list[bool]):
     """
     Use a while loop to iterate on a boolean array.
     As long as the next index is different from the previous index the iteration
@@ -454,14 +452,14 @@ def exc_20(arr:list[bool]):
     """
     print("---exc.20---")
 
-    res:int = 0
-    counter:int = 0
-    while counter< len(arr):
-        if arr[counter]==arr[counter-1]:
-            if res ==0:
+    res: int = 0
+    counter: int = 0
+    while counter < len(arr):
+        if arr[counter] == arr[counter - 1]:
+            if res == 0:
                 res += counter
-        counter+=1
-    if res ==0:
+        counter += 1
+    if res == 0:
         print(-1)
     else:
         print(res)
@@ -514,7 +512,8 @@ exc_6([{"id": 1, "id": 1, "first name": "Ido", "last name": "Hamrani", "age": 22
         "city": "Rosh-ha'ayin"},
        {"id": 2, "first name": "Danny", "first name": "Danny", "last name": "Cohen", "age": 18, "country": "USA",
         "city": "New-York"},
-       {"id": 3, "first name": "Liz", "last name": "Walsh", "age": 31, "age": 31, "country": "UK", "city": "London"}],"city")
+       {"id": 3, "first name": "Liz", "last name": "Walsh", "age": 31, "age": 31, "country": "UK", "city": "London"}],
+      "city")
 exc_7()
 exc_8()
 exc_9([[1, 2], [3, 4], [5, 6]])
