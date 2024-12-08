@@ -48,7 +48,6 @@ def exc_4():
             print("Fizz", end=" ")
         elif i % 5 == 0:
             print("Buzz", end=" ")
-
         else:
             print(i, end=" ")
     print()
@@ -93,13 +92,13 @@ def exc_6(students: list[dict[str, object]], prop: str):
     """
     print("---exc.6---")
 
-    for student in students:
+    for student in sorted(students, key=lambda x: x['age'], reverse=True):
         if prop in student:
             del student[prop]
         for key,value in student.items():
             print(f"{key}: {value}")
 
-    print(sorted(students, key=lambda x: x['age'], reverse=True))
+
 
 
 def exc_7():
